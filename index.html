@@ -11,7 +11,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0f1f3a; --navy-2:#172b4d; --ink:#1c2433; --muted:#5a6475;
@@ -104,6 +104,22 @@
     section{padding:60px 0}
     .hero{padding:64px 0 60px}
   }
+
+  /* IEB election notice */
+  .vote{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(9,18,36,.72)}
+  .vote[hidden]{display:none}
+  .vote-card{position:relative;width:min(440px,100%);background:var(--paper);color:var(--ink);border-radius:10px;border-top:4px solid var(--gold);padding:30px 26px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+  .vote-card .eyebrow{color:var(--gold);margin-bottom:6px}
+  .vote-card h2{font-size:1.9rem;color:var(--navy);margin-bottom:6px}
+  .vote-role{color:var(--muted);font-size:.98rem}
+  .ballot{display:inline-flex;align-items:baseline;gap:10px;margin:18px 0 6px;padding:10px 20px;border:2px solid var(--navy);border-radius:8px}
+  .ballot span{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted)}
+  .ballot strong{font-family:"Cormorant Garamond",serif;font-size:2.4rem;line-height:1;color:var(--navy)}
+  .vote-id{font-size:.82rem;color:var(--muted);margin-bottom:16px}
+  .appeal{font-family:"Hind Siliguri",sans-serif;font-size:1.12rem;font-weight:600;color:var(--navy);line-height:1.6;margin-bottom:20px}
+  .vote-ok{background:var(--navy);color:#fff;border:0;border-radius:5px;padding:11px 26px;font:inherit;font-size:.92rem;cursor:pointer}
+  .vote-x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:1.6rem;line-height:1;color:var(--muted);cursor:pointer;padding:4px 8px}
+  .vote-ok:focus-visible,.vote-x:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -276,6 +292,19 @@
   </div>
 </footer>
 
+<div class="vote" id="vote" role="dialog" aria-modal="true" aria-labelledby="vote-title" hidden>
+  <div class="vote-card">
+    <button class="vote-x" type="button" aria-label="Close" data-close>&times;</button>
+    <p class="eyebrow">IEB Election 2027–28</p>
+    <h2 id="vote-title">Engr. Md. Noorul Karim</h2>
+    <p class="vote-role">Candidate for Chairman<br>IEB Chittagong Centre</p>
+    <div class="ballot"><span>Ballot Serial</span><strong>02</strong></div>
+    <p class="vote-id">F/03265</p>
+    <p class="appeal" lang="bn">নুরুল করিম সাহেবকে আইইবি নির্বাচনে ভোট দিয়ে জয়যুক্ত করুন।</p>
+    <button class="vote-ok" type="button" data-close>View profile</button>
+  </div>
+</div>
+
 <script>
   (function(){
     var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
@@ -292,6 +321,19 @@
       entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
     },{threshold:.12});
     els.forEach(function(el){io.observe(el)});
+  })();
+</script>
+<script>
+  (function(){
+    var box=document.getElementById('vote'); if(!box) return;
+    var seen=false; try{ seen=sessionStorage.getItem('voteSeen')==='1'; }catch(e){}
+    if(seen) return;
+    var last=null;
+    function close(){ box.hidden=true; try{ sessionStorage.setItem('voteSeen','1'); }catch(e){} if(last&&last.focus) last.focus(); document.removeEventListener('keydown',onKey); }
+    function onKey(e){ if(e.key==='Escape') close(); }
+    box.addEventListener('click',function(e){ if(e.target===box||e.target.hasAttribute('data-close')) close(); });
+    last=document.activeElement; box.hidden=false; document.addEventListener('keydown',onKey);
+    var ok=box.querySelector('.vote-ok'); if(ok) ok.focus();
   })();
 </script>
 </body>
