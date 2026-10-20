@@ -11,7 +11,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0f1f3a; --navy-2:#172b4d; --ink:#1c2433; --muted:#5a6475;
@@ -88,6 +88,14 @@
   .aff h3{font-size:1.25rem;margin-bottom:4px}
   .aff p{color:#c7cedb;font-size:.92rem}
 
+  /* Technical credentials */
+  .cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .cred{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px}
+  .cred h3{font-size:1.2rem;color:var(--navy);margin-bottom:2px}
+  .cred p{color:var(--muted);font-size:.92rem}
+  .contact{margin-top:10px}
+  .contact a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold-soft)}
+
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem}
   footer strong{font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--navy);display:block;margin-bottom:4px}
 
@@ -105,21 +113,41 @@
     .hero{padding:64px 0 60px}
   }
 
-  /* IEB election notice */
-  .vote{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(9,18,36,.72)}
+  /* IEB election notice — styled after the client's candidate card; scales as one landscape card on every screen */
+  .vote{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-start;justify-content:center;padding:16px 10px;background:rgba(9,18,36,.75);overflow-y:auto}
   .vote[hidden]{display:none}
-  .vote-card{position:relative;width:min(440px,100%);background:var(--paper);color:var(--ink);border-radius:10px;border-top:4px solid var(--gold);padding:30px 26px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
-  .vote-card .eyebrow{color:var(--gold);margin-bottom:6px}
-  .vote-card h2{font-size:1.9rem;color:var(--navy);margin-bottom:6px}
-  .vote-role{color:var(--muted);font-size:.98rem}
-  .ballot{display:inline-flex;align-items:baseline;gap:10px;margin:18px 0 6px;padding:10px 20px;border:2px solid var(--navy);border-radius:8px}
-  .ballot span{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted)}
-  .ballot strong{font-family:"Cormorant Garamond",serif;font-size:2.4rem;line-height:1;color:var(--navy)}
-  .vote-id{font-size:.82rem;color:var(--muted);margin-bottom:16px}
-  .appeal{font-family:"Hind Siliguri",sans-serif;font-size:1.12rem;font-weight:600;color:var(--navy);line-height:1.6;margin-bottom:20px}
-  .vote-ok{background:var(--navy);color:#fff;border:0;border-radius:5px;padding:11px 26px;font:inherit;font-size:.92rem;cursor:pointer}
-  .vote-x{position:absolute;top:8px;right:10px;background:none;border:0;font-size:1.6rem;line-height:1;color:var(--muted);cursor:pointer;padding:4px 8px}
+  .vote-wrap{position:relative;width:min(880px,100%);margin:auto;container-type:inline-size}
+  .vcard{--u:calc(100cqi/880);--cn:#0d2c54;--cb:#14518f;background:#fff;color:#1d2433;font-family:Montserrat,Inter,system-ui,sans-serif;border-radius:6px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.4)}
+  .vc-top{display:grid;grid-template-columns:calc(190*var(--u)) 1fr calc(122*var(--u));gap:calc(22*var(--u));align-items:center;padding:calc(24*var(--u)) calc(26*var(--u)) calc(12*var(--u))}
+  .vc-photo{width:100%;aspect-ratio:216/281;object-fit:cover;height:auto;border:max(1px,calc(2*var(--u))) solid #111;display:block;background:#eef1f5}
+  .vc-head{text-align:center}
+  .vc-name{font-family:Montserrat,sans-serif;font-weight:700;font-size:calc(34*var(--u));color:var(--cn);line-height:1.15;margin-bottom:calc(6*var(--u))}
+  .vc-quals{font-size:max(8px,calc(15*var(--u)));color:#333;padding-bottom:calc(12*var(--u));border-bottom:max(1px,calc(2*var(--u))) solid #9fb0c6;margin-bottom:calc(14*var(--u))}
+  .vc-for{display:inline-block;background:var(--cn);color:#fff;font-weight:600;letter-spacing:calc(3*var(--u));font-size:max(7px,calc(12.5*var(--u)));padding:calc(7*var(--u)) calc(18*var(--u));margin-bottom:calc(8*var(--u))}
+  .vc-post{font-weight:800;font-size:calc(40*var(--u));letter-spacing:calc(1*var(--u));line-height:1;color:#111}
+  .vc-centre{font-weight:700;font-size:calc(18*var(--u));color:#222;padding-top:calc(4*var(--u));padding-bottom:calc(8*var(--u));border-bottom:max(1px,calc(2*var(--u))) solid #9fb0c6}
+  .vc-ballot{border:max(1px,calc(2*var(--u))) solid var(--cn);border-radius:calc(10*var(--u));overflow:hidden;text-align:center;align-self:start;margin-top:calc(4*var(--u))}
+  .vc-ballot span{display:block;background:var(--cn);color:#fff;font-weight:700;font-size:max(7px,calc(13*var(--u)));line-height:1.25;padding:calc(8*var(--u)) calc(6*var(--u));border-radius:0 0 calc(8*var(--u)) calc(8*var(--u))}
+  .vc-ballot strong{display:block;font-size:calc(52*var(--u));font-weight:700;color:var(--cn);line-height:1.1;padding:calc(4*var(--u)) 0 calc(8*var(--u))}
+  .vc-body{display:grid;grid-template-columns:1fr 1fr;padding:calc(6*var(--u)) calc(26*var(--u)) calc(20*var(--u))}
+  .vc-col{padding-right:calc(18*var(--u))}
+  .vc-col + .vc-col{border-left:max(1px,calc(2*var(--u))) solid #9fb0c6;padding-left:calc(18*var(--u));padding-right:0}
+  .vc-col h3{font-family:Montserrat,sans-serif;font-weight:700;font-size:max(10px,calc(17.5*var(--u)));color:#111;margin-bottom:calc(6*var(--u))}
+  .vc-col ul{list-style:none}
+  .vc-col li{position:relative;padding-left:calc(16*var(--u));font-size:max(8px,calc(14*var(--u)));line-height:1.35;margin-bottom:calc(3*var(--u));color:#222}
+  .vc-col li::before{content:"";position:absolute;left:0;top:.45em;width:calc(7*var(--u));height:calc(7*var(--u));background:var(--cb)}
+  .vc-foot{background:linear-gradient(90deg,var(--cn),var(--cb));color:#fff;text-align:center;font-size:max(8px,calc(13*var(--u)));padding:calc(10*var(--u)) calc(16*var(--u));line-height:1.6}
+  .vc-foot a{color:#fff;text-decoration:none}
+  .vote-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;background:var(--paper);border-radius:6px;padding:12px 16px}
+  .appeal{font-family:"Hind Siliguri",sans-serif;font-size:1.05rem;font-weight:600;color:var(--navy);line-height:1.5}
+  .vote-ok{background:var(--navy);color:#fff;border:0;border-radius:5px;padding:10px 22px;font:inherit;font-size:.9rem;cursor:pointer;white-space:nowrap}
+  .vote-x{position:absolute;top:-12px;right:-12px;width:36px;height:36px;border-radius:50%;background:#fff;border:0;font-size:1.5rem;line-height:1;color:var(--navy);cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.3);z-index:1}
   .vote-ok:focus-visible,.vote-x:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  @media (max-width:700px){
+    .vote{align-items:center}
+    .vote-x{top:-14px;right:-4px;width:32px;height:32px;font-size:1.3rem}
+    .appeal{font-size:.95rem}
+  }
 </style>
 </head>
 <body>
@@ -133,6 +161,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#ieb">IEB Service</a></li>
       <li><a href="#affiliations">Affiliations</a></li>
+      <li><a href="#training">Training</a></li>
     </ul>
   </div>
 </header>
@@ -184,7 +213,7 @@
         <article class="role reveal">
           <p class="sector">Urban development</p>
           <h3>Chairman</h3>
-          <p>Chittagong Development Authority (CDA)</p>
+          <p>Chittagong Development Authority (CDA) · Sep 2024 – Jun 2026</p>
         </article>
         <article class="role reveal">
           <p class="sector">Power sector</p>
@@ -261,8 +290,12 @@
       </div>
       <div class="aff-grid">
         <div class="aff reveal">
-          <h3>WPEA, Chittagong</h3>
-          <p>Secretary (1993–1994, 1995–1996, 1997–1998); former Vice Chairman, WPEA</p>
+          <h3>Water and Power Engineers Association, Chattogram</h3>
+          <p>Vice President (2001–2002); Secretary (1993–1994, 1995–1996, 1997–1998, 1999–2000)</p>
+        </div>
+        <div class="aff reveal">
+          <h3>PROKRICHI Movement</h3>
+          <p>Involved</p>
         </div>
         <div class="aff reveal">
           <h3>Chittagong Eye Hospital</h3>
@@ -283,25 +316,105 @@
       </div>
     </div>
   </section>
+
+  <section id="training">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Training</p>
+        <h2>Technical Credentials</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="cred-grid">
+        <div class="cred reveal">
+          <h3>Power Plant Engineering Course</h3>
+          <p>Asian Institute of Technology (AIT), Thailand</p>
+        </div>
+        <div class="cred reveal">
+          <h3>SCADA System Training (1989)</h3>
+          <p>GEC, UK</p>
+        </div>
+        <div class="cred reveal">
+          <h3>Operation and Maintenance of UPS</h3>
+          <p>ERSKINE, UK</p>
+        </div>
+        <div class="cred reveal">
+          <h3>Alternator Control and Switchgear Training</h3>
+          <p>DALE, UK</p>
+        </div>
+        <div class="cred reveal">
+          <h3>GIS Training</h3>
+          <p>Siemens, Germany</p>
+        </div>
+        <div class="cred reveal">
+          <h3>Transformer Training (2003)</h3>
+          <p>Iran Transfo, Iran</p>
+        </div>
+        <div class="cred reveal">
+          <h3>Prepaid Metering System Training (2005)</h3>
+          <p>MIM, Malaysia</p>
+        </div>
+        <div class="cred reveal">
+          <h3>LT Switchgear Training</h3>
+          <p>L&amp;T, India</p>
+        </div>
+        <div class="cred reveal">
+          <h3>Renewable Energy Course</h3>
+          <p>Dhaka University</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <strong>Engr. Md. Noorul Karim</strong>
     B.Sc. Engg., EMBA
+    <p class="contact">Mobile: <a href="tel:+8801756974858">+88 01756-974858</a> &nbsp;·&nbsp; Email: <a href="mailto:mnkarimnew@gmail.com">mnkarimnew@gmail.com</a></p>
   </div>
 </footer>
 
 <div class="vote" id="vote" role="dialog" aria-modal="true" aria-labelledby="vote-title" hidden>
-  <div class="vote-card">
+  <div class="vote-wrap">
     <button class="vote-x" type="button" aria-label="Close" data-close>&times;</button>
-    <p class="eyebrow">IEB Election 2027–28</p>
-    <h2 id="vote-title">Engr. Md. Noorul Karim</h2>
-    <p class="vote-role">Candidate for Chairman<br>IEB Chittagong Centre</p>
-    <div class="ballot"><span>Ballot Serial</span><strong>02</strong></div>
-    <p class="vote-id">F/03265</p>
-    <p class="appeal" lang="bn">নুরুল করিম সাহেবকে আইইবি নির্বাচনে ভোট দিয়ে জয়যুক্ত করুন।</p>
-    <button class="vote-ok" type="button" data-close>View profile</button>
+    <article class="vcard">
+      <div class="vc-top">
+        <img class="vc-photo" src="assets/noorul-karim.jpg" width="216" height="281" alt="Portrait of Engr. Md. Noorul Karim">
+        <div class="vc-head">
+          <h2 class="vc-name" id="vote-title">Engr. Md. Noorul Karim</h2>
+          <p class="vc-quals">B.Sc. Engg., EMBA (F/03265)</p>
+          <p class="vc-for">CANDIDATE FOR</p>
+          <p class="vc-post">CHAIRMAN</p>
+          <p class="vc-centre">IEB, CHATTOGRAM CENTRE</p>
+        </div>
+        <div class="vc-ballot"><span>BALLOT<br>SERIAL NO.</span><strong>2</strong></div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-col">
+          <h3>Professional Positions</h3>
+          <ul>
+            <li>Chairman, Chattogram Development Authority (CDA) (Sep 2024–Jun 2026)</li>
+            <li>Former Addl. Chief Engr. (in-charge), BPDB</li>
+            <li>Former Director, Engineering Academy, Kaptai</li>
+            <li>Former Guest Lecturer, USTC</li>
+          </ul>
+        </div>
+        <div class="vc-col">
+          <h3>IEB Involvement</h3>
+          <ul>
+            <li>Vice Chairman, IEB, Chittagong (2006–07)</li>
+            <li>Honorary Secretary, IEB, Chittagong (2002–03)</li>
+            <li>Member Secretary, Steering Committee, 47<sup>th</sup> Convention</li>
+            <li>Central Council Member, 2000-01, 2013-14</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="vc-foot">Mobile: <a href="tel:+8801756974858">+88 01756-974858</a><br>Email: <a href="mailto:mnkarimnew@gmail.com">mnkarimnew@gmail.com</a></footer>
+    </article>
+    <div class="vote-bar">
+      <p class="appeal" lang="bn">নুরুল করিম সাহেবকে আইইবি নির্বাচনে ভোট দিয়ে জয়যুক্ত করুন।</p>
+      <button class="vote-ok" type="button" data-close>View profile</button>
+    </div>
   </div>
 </div>
 
@@ -333,7 +446,7 @@
     function onKey(e){ if(e.key==='Escape') close(); }
     box.addEventListener('click',function(e){ if(e.target===box||e.target.hasAttribute('data-close')) close(); });
     last=document.activeElement; box.hidden=false; document.addEventListener('keydown',onKey);
-    var ok=box.querySelector('.vote-ok'); if(ok) ok.focus();
+    var ok=box.querySelector('.vote-ok'); if(ok) ok.focus({preventScroll:true}); box.scrollTop=0;
   })();
 </script>
 </body>
