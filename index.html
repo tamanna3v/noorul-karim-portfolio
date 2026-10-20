@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engr. Md. Noorul Karim — Engineer & Public Sector Leader</title>
+<meta name="description" content="Professional profile of Engr. Md. Noorul Karim, B.Sc. Engg., EMBA — former Chairman of Chittagong Development Authority and long-serving leader of the Institution of Engineers, Bangladesh, Chittagong Centre.">
+<meta property="og:title" content="Engr. Md. Noorul Karim">
+<meta property="og:description" content="Engineer and public sector leader — former Chairman, Chittagong Development Authority (CDA).">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f1f3a; --navy-2:#172b4d; --ink:#1c2433; --muted:#5a6475;
+    --gold:#b08a3e; --gold-soft:#e9dcc0; --paper:#faf8f4; --card:#ffffff; --line:#e4dfd4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.15}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  header.nav{position:sticky;top:0;z-index:10;background:rgba(15,31,58,.96);backdrop-filter:blur(6px);color:#fff}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;text-decoration:none;letter-spacing:.3px}
+  .brand span{color:var(--gold-soft)}
+  .nav ul{list-style:none;display:flex;gap:26px}
+  .nav ul a{text-decoration:none;font-size:.9rem;color:#d6dbe6;transition:color .2s}
+  .nav ul a:hover,.nav ul a:focus{color:#fff}
+  .menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;font-size:.9rem;cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:90px 0 80px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:1px solid rgba(176,138,62,.35);border-radius:50%}
+  .hero::before{content:"";position:absolute;right:-40px;top:-40px;width:260px;height:260px;border:1px solid rgba(176,138,62,.22);border-radius:50%}
+  .monogram{width:84px;height:84px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--gold-soft);margin-bottom:28px}
+  .eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.75rem;color:var(--gold-soft);margin-bottom:12px}
+  .hero h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:10px}
+  .creds{font-size:1.05rem;color:#c7cedb;margin-bottom:24px}
+  .lead{max-width:640px;font-size:1.1rem;color:#e3e7ef}
+  .hero .cta{display:inline-block;margin-top:34px;padding:12px 24px;border:1px solid var(--gold);color:#fff;text-decoration:none;border-radius:4px;font-size:.92rem;transition:background .2s}
+  .hero .cta:hover,.hero .cta:focus{background:var(--gold)}
+
+  /* Sections */
+  section{padding:80px 0}
+  .sec-head{margin-bottom:40px}
+  .sec-head .eyebrow{color:var(--gold)}
+  .sec-head h2{font-size:clamp(2rem,4vw,2.6rem);color:var(--navy)}
+  .rule{width:56px;height:2px;background:var(--gold);margin-top:14px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+  .about-grid p{color:var(--muted);margin-bottom:16px;font-size:1.04rem}
+  .facts{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px}
+  .facts dt{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-top:16px}
+  .facts dt:first-child{margin-top:0}
+  .facts dd{font-weight:500;color:var(--ink)}
+
+  /* Experience */
+  #experience{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .role{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:22px 24px;background:var(--paper)}
+  .role .sector{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:6px}
+  .role h3{font-size:1.4rem;color:var(--navy);margin-bottom:4px}
+  .role p{color:var(--muted);font-size:.95rem}
+
+  /* Timeline */
+  .timeline{position:relative;margin-left:8px}
+  .timeline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--gold-soft)}
+  .t-item{position:relative;padding:0 0 30px 34px}
+  .t-item:last-child{padding-bottom:0}
+  .t-item::before{content:"";position:absolute;left:-6px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--gold)}
+  .t-years{font-size:.85rem;font-weight:600;color:var(--gold);letter-spacing:.5px}
+  .t-item h3{font-size:1.35rem;color:var(--navy)}
+  .t-item p{color:var(--muted);font-size:.95rem}
+
+  /* Affiliations */
+  #affiliations{background:var(--navy);color:#fff}
+  #affiliations .sec-head h2{color:#fff}
+  #affiliations .sec-head .eyebrow{color:var(--gold-soft)}
+  .aff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .aff{border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:20px 22px}
+  .aff h3{font-size:1.25rem;margin-bottom:4px}
+  .aff p{color:#c7cedb;font-size:.92rem}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem}
+  footer strong{font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--navy);display:block;margin-bottom:4px}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:760px){
+    .menu-btn{display:block}
+    .nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--navy)}
+    .nav ul.open{display:flex}
+    .nav ul a{display:block;padding:14px 20px;border-top:1px solid rgba(255,255,255,.08)}
+    .about-grid{grid-template-columns:1fr;gap:28px}
+    section{padding:60px 0}
+    .hero{padding:64px 0 60px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">Md. Noorul <span>Karim</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#ieb">IEB Service</a></li>
+      <li><a href="#affiliations">Affiliations</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="monogram" aria-hidden="true">NK</div>
+      <p class="eyebrow">Engineer · Public Sector Leader</p>
+      <h1>Engr. Md. Noorul Karim</h1>
+      <p class="creds">B.Sc. Engg. &nbsp;·&nbsp; EMBA</p>
+      <p class="lead">Former Chairman of the Chittagong Development Authority, with senior engineering leadership across power, engineering education and healthcare, and long-standing service to the Institution of Engineers, Bangladesh.</p>
+      <a class="cta" href="#experience">View experience</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Profile</p>
+        <h2>About</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>Engr. Md. Noorul Karim is an engineer whose career spans public infrastructure, the power sector, engineering education and hospital engineering. He has served as Chairman of the Chittagong Development Authority (CDA) and as Additional Chief Engineer (in-charge) at the Bangladesh Power Development Board (BPDB).</p>
+          <p>Alongside his professional roles, he has been closely involved with the Institution of Engineers, Bangladesh (IEB), Chittagong Centre since the mid-1990s — as Vice Chairman, Honorary Secretary, and a member of both the Central and Local Councils.</p>
+        </div>
+        <dl class="facts reveal">
+          <dt>Qualifications</dt>
+          <dd>B.Sc. Engineering, EMBA</dd>
+          <dt>Most senior public role</dt>
+          <dd>Chairman, Chittagong Development Authority</dd>
+          <dt>Professional body</dt>
+          <dd>Institution of Engineers, Bangladesh — Chittagong Centre</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Career</p>
+        <h2>Professional Experience</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="roles">
+        <article class="role reveal">
+          <p class="sector">Urban development</p>
+          <h3>Chairman</h3>
+          <p>Chittagong Development Authority (CDA)</p>
+        </article>
+        <article class="role reveal">
+          <p class="sector">Power sector</p>
+          <h3>Additional Chief Engineer (in-charge)</h3>
+          <p>Bangladesh Power Development Board (BPDB)</p>
+        </article>
+        <article class="role reveal">
+          <p class="sector">Engineering education</p>
+          <h3>Director</h3>
+          <p>Engineering Academy, Kaptai</p>
+        </article>
+        <article class="role reveal">
+          <p class="sector">Academia</p>
+          <h3>Guest Lecturer</h3>
+          <p>University of Science and Technology Chittagong (USTC)</p>
+        </article>
+        <article class="role reveal">
+          <p class="sector">Healthcare</p>
+          <h3>Head of Engineering</h3>
+          <p>Apollo Imperial Hospital</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ieb">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Professional service</p>
+        <h2>Institution of Engineers, Bangladesh</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="timeline">
+        <div class="t-item reveal">
+          <p class="t-years">1996–1997 · 2000–2001 · 2004–2005 · 2013–2014</p>
+          <h3>Local Council Member</h3>
+          <p>IEB Chittagong Centre</p>
+        </div>
+        <div class="t-item reveal">
+          <p class="t-years">2000–2001 · 2013–2014</p>
+          <h3>Central Council Member</h3>
+          <p>Institution of Engineers, Bangladesh</p>
+        </div>
+        <div class="t-item reveal">
+          <p class="t-years">2002–2003</p>
+          <h3>Honorary Secretary</h3>
+          <p>IEB Chittagong Centre</p>
+        </div>
+        <div class="t-item reveal">
+          <p class="t-years">2006–2007</p>
+          <h3>Vice Chairman</h3>
+          <p>IEB Chittagong Centre</p>
+        </div>
+        <div class="t-item reveal">
+          <p class="t-years">47th IEB Convention</p>
+          <h3>Member Secretary, Steering Committee</h3>
+          <p>Institution of Engineers, Bangladesh</p>
+        </div>
+        <div class="t-item reveal">
+          <p class="t-years">49th IEB Convention</p>
+          <h3>Member Secretary, Finance Committee</h3>
+          <p>Institution of Engineers, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="affiliations">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Community</p>
+        <h2>Other Affiliations</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="aff-grid">
+        <div class="aff reveal">
+          <h3>WPEA, Chittagong</h3>
+          <p>Secretary (1993–1994, 1995–1996, 1997–1998); former Vice Chairman, WPEA</p>
+        </div>
+        <div class="aff reveal">
+          <h3>Chittagong Eye Hospital</h3>
+          <p>Life Fellow</p>
+        </div>
+        <div class="aff reveal">
+          <h3>BUET Alumni Association</h3>
+          <p>Member</p>
+        </div>
+        <div class="aff reveal">
+          <h3>Chittagong Collegiate School Alumni Association</h3>
+          <p>Member</p>
+        </div>
+        <div class="aff reveal">
+          <h3>Chittagong College Alumni Association</h3>
+          <p>Member</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Engr. Md. Noorul Karim</strong>
+    B.Sc. Engg., EMBA
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
+    btn.addEventListener('click',function(){
+      var open=menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+    menu.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+    });
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  })();
+</script>
+</body>
+</html>
