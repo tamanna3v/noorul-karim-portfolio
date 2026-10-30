@@ -38,7 +38,8 @@
   .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:90px 0 80px;position:relative;overflow:hidden}
   .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:1px solid rgba(176,138,62,.35);border-radius:50%}
   .hero::before{content:"";position:absolute;right:-40px;top:-40px;width:260px;height:260px;border:1px solid rgba(176,138,62,.22);border-radius:50%}
-  .monogram{width:84px;height:84px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--gold-soft);margin-bottom:28px}
+  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;position:relative;z-index:1}
+  .hero-photo{width:216px;height:auto;aspect-ratio:216/281;object-fit:cover;display:block;border:3px solid var(--gold);border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.35);background:#1b2c4a}
   .eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.75rem;color:var(--gold-soft);margin-bottom:12px}
   .hero h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:10px}
   .creds{font-size:1.05rem;color:#c7cedb;margin-bottom:24px}
@@ -111,6 +112,8 @@
     .about-grid{grid-template-columns:1fr;gap:28px}
     section{padding:60px 0}
     .hero{padding:64px 0 60px}
+    .hero-grid{grid-template-columns:1fr;gap:0}
+    .hero-photo{order:-1;width:140px;margin-bottom:26px}
   }
 
   /* IEB election notice — styled after the client's candidate card; scales as one landscape card on every screen */
@@ -196,12 +199,16 @@
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <div class="monogram" aria-hidden="true">NK</div>
+      <div class="hero-grid">
+      <div class="hero-text">
       <p class="eyebrow"><span class="en">Engineer · Public Sector Leader</span><span class="bn" lang="bn">প্রকৌশলী · সরকারি খাতের নেতৃত্ব</span></p>
       <h1><span class="en">Engr. Md. Noorul Karim</span><span class="bn" lang="bn">প্রকৌশলী মো. নুরুল করিম</span></h1>
       <p class="creds"><span class="en">B.Sc. Engg. &nbsp;·&nbsp; EMBA</span><span class="bn" lang="bn">বিএসসি ইঞ্জিনিয়ারিং &nbsp;·&nbsp; ইএমবিএ</span></p>
       <p class="lead"><span class="en">Former Chairman of the Chittagong Development Authority, with senior engineering leadership across power, engineering education and healthcare, and long-standing service to the Institution of Engineers, Bangladesh.</span><span class="bn" lang="bn">চট্টগ্রাম উন্নয়ন কর্তৃপক্ষের (সিডিএ) সাবেক চেয়ারম্যান। বিদ্যুৎ, প্রকৌশল শিক্ষা ও স্বাস্থ্যসেবা খাতে জ্যেষ্ঠ প্রকৌশল নেতৃত্ব, আর দীর্ঘদিন ধরে ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ (আইইবি)-এর সেবায় যুক্ত।</span></p>
       <a class="cta" href="#about"><span class="en">Read his story</span><span class="bn" lang="bn">পরিচিতি পড়ুন</span></a>
+      </div>
+      <img class="hero-photo" src="assets/noorul-karim.jpg" width="216" height="281" alt="Portrait of Engr. Md. Noorul Karim">
+      </div>
     </div>
   </div>
 
