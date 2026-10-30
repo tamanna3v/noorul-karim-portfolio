@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,10 +8,10 @@
 <meta property="og:title" content="Engr. Md. Noorul Karim">
 <meta property="og:description" content="Engineer and public sector leader — former Chairman, Chittagong Development Authority (CDA).">
 <meta property="og:type" content="profile">
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js');(function(){var l=null;try{var q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='bn')l=q;else l=localStorage.getItem('lang');}catch(e){}document.documentElement.lang=(l==='en')?'en':'bn';})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600&family=Noto+Serif+Bengali:wght@500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0f1f3a; --navy-2:#172b4d; --ink:#1c2433; --muted:#5a6475;
@@ -148,21 +148,48 @@
     .vote-x{top:-14px;right:-4px;width:32px;height:32px;font-size:1.3rem}
     .appeal{font-size:.95rem}
   }
+
+  /* Bilingual */
+  html[lang="bn"] .en, html[lang="en"] .bn{display:none !important}
+  html[lang="bn"] body{font-family:"Hind Siliguri",Inter,system-ui,sans-serif;line-height:1.75}
+  html[lang="bn"] h1,html[lang="bn"] h2:not(.vc-name),html[lang="bn"] h3:not(.vc-col h3),html[lang="bn"] .brand{font-family:"Noto Serif Bengali","Hind Siliguri",serif;font-weight:600}
+  html[lang="bn"] .hero h1{font-size:clamp(2rem,5.4vw,3.4rem);line-height:1.3}
+  html[lang="bn"] .eyebrow{letter-spacing:1px}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .lang{display:inline-flex;border:1px solid rgba(255,255,255,.35);border-radius:999px;overflow:hidden}
+  .lang button{background:none;border:0;color:#d6dbe6;font:inherit;font-size:.82rem;padding:5px 11px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--gold);color:#fff}
+  .lang button:focus-visible{outline:2px solid var(--gold-soft);outline-offset:-2px}
+
+  /* Why-story */
+  .story{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:8px;padding:30px 32px;margin-bottom:44px}
+  .story .eyebrow{color:var(--gold);margin-bottom:8px}
+  .story h3{font-size:clamp(1.5rem,3vw,1.95rem);color:var(--navy);margin-bottom:16px}
+  .story p{color:var(--ink);font-size:1.05rem;margin-bottom:14px;max-width:760px}
+  .story p:last-child{margin-bottom:0}
+  .story strong{color:var(--navy)}
+  @media (max-width:760px){ .story{padding:22px 20px} .nav-right{gap:10px} }
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a href="#top" class="brand">Md. Noorul <span>Karim</span></a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
-    <ul id="menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#ieb">IEB Service</a></li>
-      <li><a href="#affiliations">Affiliations</a></li>
-      <li><a href="#training">Training</a></li>
-    </ul>
+    <a href="#top" class="brand"><span class="en">Md. Noorul <span>Karim</span></span><span class="bn" lang="bn">মো. নুরুল <span>করিম</span></span></a>
+    <div class="nav-right">
+      <ul id="menu">
+        <li><a href="#about"><span class="en">About</span><span class="bn" lang="bn">পরিচিতি</span></a></li>
+        <li><a href="#experience"><span class="en">Experience</span><span class="bn" lang="bn">অভিজ্ঞতা</span></a></li>
+        <li><a href="#ieb"><span class="en">IEB Service</span><span class="bn" lang="bn">আইইবি-তে ভূমিকা</span></a></li>
+        <li><a href="#affiliations"><span class="en">Affiliations</span><span class="bn" lang="bn">সংগঠন</span></a></li>
+        <li><a href="#training"><span class="en">Training</span><span class="bn" lang="bn">প্রশিক্ষণ</span></a></li>
+      </ul>
+      <div class="lang" role="group" aria-label="Language / ভাষা">
+        <button type="button" data-lang="bn" aria-pressed="true">বাংলা</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu"><span class="en">Menu</span><span class="bn" lang="bn">মেনু</span></button>
+    </div>
   </div>
 </header>
 
@@ -170,33 +197,51 @@
   <div class="hero">
     <div class="wrap">
       <div class="monogram" aria-hidden="true">NK</div>
-      <p class="eyebrow">Engineer · Public Sector Leader</p>
-      <h1>Engr. Md. Noorul Karim</h1>
-      <p class="creds">B.Sc. Engg. &nbsp;·&nbsp; EMBA</p>
-      <p class="lead">Former Chairman of the Chittagong Development Authority, with senior engineering leadership across power, engineering education and healthcare, and long-standing service to the Institution of Engineers, Bangladesh.</p>
-      <a class="cta" href="#experience">View experience</a>
+      <p class="eyebrow"><span class="en">Engineer · Public Sector Leader</span><span class="bn" lang="bn">প্রকৌশলী · সরকারি খাতের নেতৃত্ব</span></p>
+      <h1><span class="en">Engr. Md. Noorul Karim</span><span class="bn" lang="bn">প্রকৌশলী মো. নুরুল করিম</span></h1>
+      <p class="creds"><span class="en">B.Sc. Engg. &nbsp;·&nbsp; EMBA</span><span class="bn" lang="bn">বিএসসি ইঞ্জিনিয়ারিং &nbsp;·&nbsp; ইএমবিএ</span></p>
+      <p class="lead"><span class="en">Former Chairman of the Chittagong Development Authority, with senior engineering leadership across power, engineering education and healthcare, and long-standing service to the Institution of Engineers, Bangladesh.</span><span class="bn" lang="bn">চট্টগ্রাম উন্নয়ন কর্তৃপক্ষের (সিডিএ) সাবেক চেয়ারম্যান। বিদ্যুৎ, প্রকৌশল শিক্ষা ও স্বাস্থ্যসেবা খাতে জ্যেষ্ঠ প্রকৌশল নেতৃত্ব, আর দীর্ঘদিন ধরে ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ (আইইবি)-এর সেবায় যুক্ত।</span></p>
+      <a class="cta" href="#about"><span class="en">Read his story</span><span class="bn" lang="bn">পরিচিতি পড়ুন</span></a>
     </div>
   </div>
 
   <section id="about">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Profile</p>
-        <h2>About</h2>
+        <p class="eyebrow"><span class="en">Profile</span><span class="bn" lang="bn">প্রোফাইল</span></p>
+        <h2><span class="en">About</span><span class="bn" lang="bn">পরিচিতি</span></h2>
         <div class="rule"></div>
       </div>
+
+      <article class="story reveal" aria-labelledby="story-title">
+        <p class="eyebrow"><span class="en">IEB Election · Chattogram Centre</span><span class="bn" lang="bn">আইইবি নির্বাচন · চট্টগ্রাম কেন্দ্র</span></p>
+        <h3 id="story-title"><span class="en">Why his election matters for IEB</span><span class="bn" lang="bn">কেন আইইবি-র জন্য তাঁকে নির্বাচিত করা জরুরি</span></h3>
+        <div class="bn" lang="bn">
+          <p>১৯৯০-এর দশকের মাঝামাঝি, লোকাল কাউন্সিলের সদস্য হিসেবে আইইবি চট্টগ্রাম কেন্দ্রে তাঁর পথচলা শুরু। এরপর অনারারি সেক্রেটারি, ভাইস চেয়ারম্যান, আর দুই মেয়াদে কেন্দ্রীয় কাউন্সিলের সদস্য। ৪৭তম ও ৪৯তম কনভেনশনে স্টিয়ারিং ও ফাইন্যান্স কমিটির মেম্বার সেক্রেটারি হিসেবে বড় আয়োজনের দায়িত্বও সামলেছেন।</p>
+          <p>পেশাগত জীবনে তিনি বিদ্যুৎ উন্নয়ন বোর্ডে অতিরিক্ত প্রধান প্রকৌশলী (চলতি দায়িত্ব), কাপ্তাই ইঞ্জিনিয়ারিং একাডেমির পরিচালক, এবং সর্বশেষ চট্টগ্রাম উন্নয়ন কর্তৃপক্ষের চেয়ারম্যান। শহরের উন্নয়নের সিদ্ধান্ত যেখানে নেওয়া হয়, সেই টেবিলে তিনি নিজে বসেছেন।</p>
+          <p>আইইবি চট্টগ্রাম কেন্দ্রের চেয়ারম্যান পদে তাই দরকার এমন একজন, যিনি প্রতিষ্ঠানটিকে ভেতর থেকে চেনেন, আবার নীতিনির্ধারণের জায়গায় প্রকৌশলীদের কথা তুলে ধরতে পারেন। <strong>এই দুই অভিজ্ঞতা একসঙ্গে আছে প্রকৌশলী নুরুল করিমের।</strong></p>
+        </div>
+        <div class="en">
+          <p>His journey with IEB Chittagong Centre began in the mid-1990s as a Local Council member. He went on to serve as Honorary Secretary, Vice Chairman, and twice as a member of the Central Council — and as Member Secretary of the Steering and Finance Committees for the 47th and 49th IEB Conventions.</p>
+          <p>In his professional life he has been Additional Chief Engineer (in-charge) at the Bangladesh Power Development Board, Director of the Engineering Academy, Kaptai, and most recently Chairman of the Chittagong Development Authority. He has sat at the table where the city’s development decisions are made.</p>
+          <p>The chairmanship of IEB Chittagong Centre calls for someone who knows the institution from the inside and can also speak for engineers where policy is decided. <strong>Engr. Noorul Karim brings both.</strong></p>
+        </div>
+      </article>
+
       <div class="about-grid">
         <div class="reveal">
-          <p>Engr. Md. Noorul Karim is an engineer whose career spans public infrastructure, the power sector, engineering education and hospital engineering. He has served as Chairman of the Chittagong Development Authority (CDA) and as Additional Chief Engineer (in-charge) at the Bangladesh Power Development Board (BPDB).</p>
-          <p>Alongside his professional roles, he has been closely involved with the Institution of Engineers, Bangladesh (IEB), Chittagong Centre since the mid-1990s — as Vice Chairman, Honorary Secretary, and a member of both the Central and Local Councils.</p>
+          <p class="en">Engr. Md. Noorul Karim is an engineer whose career spans public infrastructure, the power sector, engineering education and hospital engineering. He has served as Chairman of the Chittagong Development Authority (CDA) and as Additional Chief Engineer (in-charge) at the Bangladesh Power Development Board (BPDB).</p>
+          <p class="bn" lang="bn">প্রকৌশলী মো. নুরুল করিমের কর্মজীবন বিস্তৃত সরকারি অবকাঠামো, বিদ্যুৎ খাত, প্রকৌশল শিক্ষা ও হাসপাতাল প্রকৌশলে। তিনি চট্টগ্রাম উন্নয়ন কর্তৃপক্ষের (সিডিএ) চেয়ারম্যান এবং বাংলাদেশ বিদ্যুৎ উন্নয়ন বোর্ডের (বিউবো) অতিরিক্ত প্রধান প্রকৌশলী (চলতি দায়িত্ব) হিসেবে দায়িত্ব পালন করেছেন।</p>
+          <p class="en">Alongside his professional roles, he has been closely involved with the Institution of Engineers, Bangladesh (IEB), Chittagong Centre since the mid-1990s — as Vice Chairman, Honorary Secretary, and a member of both the Central and Local Councils.</p>
+          <p class="bn" lang="bn">পেশাগত দায়িত্বের পাশাপাশি ১৯৯০-এর দশকের মাঝামাঝি থেকে তিনি ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ (আইইবি), চট্টগ্রাম কেন্দ্রের সঙ্গে ঘনিষ্ঠভাবে যুক্ত — ভাইস চেয়ারম্যান, অনারারি সেক্রেটারি, এবং কেন্দ্রীয় ও লোকাল কাউন্সিলের সদস্য হিসেবে।</p>
         </div>
         <dl class="facts reveal">
-          <dt>Qualifications</dt>
-          <dd>B.Sc. Engineering, EMBA</dd>
-          <dt>Most senior public role</dt>
-          <dd>Chairman, Chittagong Development Authority</dd>
-          <dt>Professional body</dt>
-          <dd>Institution of Engineers, Bangladesh — Chittagong Centre</dd>
+          <dt><span class="en">Qualifications</span><span class="bn" lang="bn">শিক্ষাগত যোগ্যতা</span></dt>
+          <dd><span class="en">B.Sc. Engineering, EMBA</span><span class="bn" lang="bn">বিএসসি ইঞ্জিনিয়ারিং, ইএমবিএ</span></dd>
+          <dt><span class="en">Most senior public role</span><span class="bn" lang="bn">সর্বোচ্চ সরকারি দায়িত্ব</span></dt>
+          <dd><span class="en">Chairman, Chittagong Development Authority</span><span class="bn" lang="bn">চেয়ারম্যান, চট্টগ্রাম উন্নয়ন কর্তৃপক্ষ</span></dd>
+          <dt><span class="en">Professional body</span><span class="bn" lang="bn">পেশাজীবী সংগঠন</span></dt>
+          <dd><span class="en">Institution of Engineers, Bangladesh — Chittagong Centre</span><span class="bn" lang="bn">ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ — চট্টগ্রাম কেন্দ্র</span></dd>
         </dl>
       </div>
     </div>
@@ -205,35 +250,35 @@
   <section id="experience">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Career</p>
-        <h2>Professional Experience</h2>
+        <p class="eyebrow"><span class="en">Career</span><span class="bn" lang="bn">কর্মজীবন</span></p>
+        <h2><span class="en">Professional Experience</span><span class="bn" lang="bn">পেশাগত অভিজ্ঞতা</span></h2>
         <div class="rule"></div>
       </div>
       <div class="roles">
         <article class="role reveal">
-          <p class="sector">Urban development</p>
-          <h3>Chairman</h3>
-          <p>Chittagong Development Authority (CDA) · Sep 2024 – Jun 2026</p>
+          <p class="sector"><span class="en">Urban development</span><span class="bn" lang="bn">নগর উন্নয়ন</span></p>
+          <h3><span class="en">Chairman</span><span class="bn" lang="bn">চেয়ারম্যান</span></h3>
+          <p><span class="en">Chittagong Development Authority (CDA) · Sep 2024 – Jun 2026</span><span class="bn" lang="bn">চট্টগ্রাম উন্নয়ন কর্তৃপক্ষ (সিডিএ) · সেপ্টেম্বর ২০২৪ – জুন ২০২৬</span></p>
         </article>
         <article class="role reveal">
-          <p class="sector">Power sector</p>
-          <h3>Additional Chief Engineer (in-charge)</h3>
-          <p>Bangladesh Power Development Board (BPDB)</p>
+          <p class="sector"><span class="en">Power sector</span><span class="bn" lang="bn">বিদ্যুৎ খাত</span></p>
+          <h3><span class="en">Additional Chief Engineer (in-charge)</span><span class="bn" lang="bn">অতিরিক্ত প্রধান প্রকৌশলী (চলতি দায়িত্ব)</span></h3>
+          <p><span class="en">Bangladesh Power Development Board (BPDB)</span><span class="bn" lang="bn">বাংলাদেশ বিদ্যুৎ উন্নয়ন বোর্ড (বিউবো)</span></p>
         </article>
         <article class="role reveal">
-          <p class="sector">Engineering education</p>
-          <h3>Director</h3>
-          <p>Engineering Academy, Kaptai</p>
+          <p class="sector"><span class="en">Engineering education</span><span class="bn" lang="bn">প্রকৌশল শিক্ষা</span></p>
+          <h3><span class="en">Director</span><span class="bn" lang="bn">পরিচালক</span></h3>
+          <p><span class="en">Engineering Academy, Kaptai</span><span class="bn" lang="bn">ইঞ্জিনিয়ারিং একাডেমি, কাপ্তাই</span></p>
         </article>
         <article class="role reveal">
-          <p class="sector">Academia</p>
-          <h3>Guest Lecturer</h3>
-          <p>University of Science and Technology Chittagong (USTC)</p>
+          <p class="sector"><span class="en">Academia</span><span class="bn" lang="bn">শিক্ষাক্ষেত্র</span></p>
+          <h3><span class="en">Guest Lecturer</span><span class="bn" lang="bn">অতিথি প্রভাষক</span></h3>
+          <p><span class="en">University of Science and Technology Chittagong (USTC)</span><span class="bn" lang="bn">ইউনিভার্সিটি অব সায়েন্স অ্যান্ড টেকনোলজি চিটাগং (ইউএসটিসি)</span></p>
         </article>
         <article class="role reveal">
-          <p class="sector">Healthcare</p>
-          <h3>Head of Engineering</h3>
-          <p>Apollo Imperial Hospital</p>
+          <p class="sector"><span class="en">Healthcare</span><span class="bn" lang="bn">স্বাস্থ্যসেবা</span></p>
+          <h3><span class="en">Head of Engineering</span><span class="bn" lang="bn">প্রকৌশল বিভাগের প্রধান</span></h3>
+          <p><span class="en">Apollo Imperial Hospital</span><span class="bn" lang="bn">অ্যাপোলো ইম্পেরিয়াল হাসপাতাল</span></p>
         </article>
       </div>
     </div>
@@ -242,40 +287,40 @@
   <section id="ieb">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Professional service</p>
-        <h2>Institution of Engineers, Bangladesh</h2>
+        <p class="eyebrow"><span class="en">Professional service</span><span class="bn" lang="bn">পেশাজীবী সংগঠনে সেবা</span></p>
+        <h2><span class="en">Institution of Engineers, Bangladesh</span><span class="bn" lang="bn">ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ</span></h2>
         <div class="rule"></div>
       </div>
       <div class="timeline">
         <div class="t-item reveal">
-          <p class="t-years">1996–1997 · 2000–2001 · 2004–2005 · 2013–2014</p>
-          <h3>Local Council Member</h3>
-          <p>IEB Chittagong Centre</p>
+          <p class="t-years"><span class="en">1996–1997 · 2000–2001 · 2004–2005 · 2013–2014</span><span class="bn" lang="bn">১৯৯৬–৯৭ · ২০০০–০১ · ২০০৪–০৫ · ২০১৩–১৪</span></p>
+          <h3><span class="en">Local Council Member</span><span class="bn" lang="bn">লোকাল কাউন্সিল সদস্য</span></h3>
+          <p><span class="en">IEB Chittagong Centre</span><span class="bn" lang="bn">আইইবি চট্টগ্রাম কেন্দ্র</span></p>
         </div>
         <div class="t-item reveal">
-          <p class="t-years">2000–2001 · 2013–2014</p>
-          <h3>Central Council Member</h3>
-          <p>Institution of Engineers, Bangladesh</p>
+          <p class="t-years"><span class="en">2000–2001 · 2013–2014</span><span class="bn" lang="bn">২০০০–০১ · ২০১৩–১৪</span></p>
+          <h3><span class="en">Central Council Member</span><span class="bn" lang="bn">কেন্দ্রীয় কাউন্সিল সদস্য</span></h3>
+          <p><span class="en">Institution of Engineers, Bangladesh</span><span class="bn" lang="bn">ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ</span></p>
         </div>
         <div class="t-item reveal">
-          <p class="t-years">2002–2003</p>
-          <h3>Honorary Secretary</h3>
-          <p>IEB Chittagong Centre</p>
+          <p class="t-years"><span class="en">2002–2003</span><span class="bn" lang="bn">২০০২–০৩</span></p>
+          <h3><span class="en">Honorary Secretary</span><span class="bn" lang="bn">অনারারি সেক্রেটারি</span></h3>
+          <p><span class="en">IEB Chittagong Centre</span><span class="bn" lang="bn">আইইবি চট্টগ্রাম কেন্দ্র</span></p>
         </div>
         <div class="t-item reveal">
-          <p class="t-years">2006–2007</p>
-          <h3>Vice Chairman</h3>
-          <p>IEB Chittagong Centre</p>
+          <p class="t-years"><span class="en">2006–2007</span><span class="bn" lang="bn">২০০৬–০৭</span></p>
+          <h3><span class="en">Vice Chairman</span><span class="bn" lang="bn">ভাইস চেয়ারম্যান</span></h3>
+          <p><span class="en">IEB Chittagong Centre</span><span class="bn" lang="bn">আইইবি চট্টগ্রাম কেন্দ্র</span></p>
         </div>
         <div class="t-item reveal">
-          <p class="t-years">47th IEB Convention</p>
-          <h3>Member Secretary, Steering Committee</h3>
-          <p>Institution of Engineers, Bangladesh</p>
+          <p class="t-years"><span class="en">47th IEB Convention</span><span class="bn" lang="bn">৪৭তম আইইবি কনভেনশন</span></p>
+          <h3><span class="en">Member Secretary, Steering Committee</span><span class="bn" lang="bn">মেম্বার সেক্রেটারি, স্টিয়ারিং কমিটি</span></h3>
+          <p><span class="en">Institution of Engineers, Bangladesh</span><span class="bn" lang="bn">ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ</span></p>
         </div>
         <div class="t-item reveal">
-          <p class="t-years">49th IEB Convention</p>
-          <h3>Member Secretary, Finance Committee</h3>
-          <p>Institution of Engineers, Bangladesh</p>
+          <p class="t-years"><span class="en">49th IEB Convention</span><span class="bn" lang="bn">৪৯তম আইইবি কনভেনশন</span></p>
+          <h3><span class="en">Member Secretary, Finance Committee</span><span class="bn" lang="bn">মেম্বার সেক্রেটারি, ফাইন্যান্স কমিটি</span></h3>
+          <p><span class="en">Institution of Engineers, Bangladesh</span><span class="bn" lang="bn">ইনস্টিটিউশন অব ইঞ্জিনিয়ার্স, বাংলাদেশ</span></p>
         </div>
       </div>
     </div>
@@ -284,34 +329,34 @@
   <section id="affiliations">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Community</p>
-        <h2>Other Affiliations</h2>
+        <p class="eyebrow"><span class="en">Community</span><span class="bn" lang="bn">সমাজ ও সংগঠন</span></p>
+        <h2><span class="en">Other Affiliations</span><span class="bn" lang="bn">অন্যান্য সংগঠন</span></h2>
         <div class="rule"></div>
       </div>
       <div class="aff-grid">
         <div class="aff reveal">
-          <h3>Water and Power Engineers Association, Chattogram</h3>
-          <p>Vice President (2001–2002); Secretary (1993–1994, 1995–1996, 1997–1998, 1999–2000)</p>
+          <h3><span class="en">Water and Power Engineers Association, Chattogram</span><span class="bn" lang="bn">ওয়াটার অ্যান্ড পাওয়ার ইঞ্জিনিয়ার্স অ্যাসোসিয়েশন, চট্টগ্রাম</span></h3>
+          <p><span class="en">Vice President (2001–2002); Secretary (1993–1994, 1995–1996, 1997–1998, 1999–2000)</span><span class="bn" lang="bn">সহ-সভাপতি (২০০১–০২); সাধারণ সম্পাদক (১৯৯৩–৯৪, ১৯৯৫–৯৬, ১৯৯৭–৯৮, ১৯৯৯–২০০০)</span></p>
         </div>
         <div class="aff reveal">
-          <h3>PROKRICHI Movement</h3>
-          <p>Involved</p>
+          <h3><span class="en">PROKRICHI Movement</span><span class="bn" lang="bn">প্রকৃচি আন্দোলন</span></h3>
+          <p><span class="en">Involved</span><span class="bn" lang="bn">যুক্ত</span></p>
         </div>
         <div class="aff reveal">
-          <h3>Chittagong Eye Hospital</h3>
-          <p>Life Fellow</p>
+          <h3><span class="en">Chittagong Eye Hospital</span><span class="bn" lang="bn">চট্টগ্রাম চক্ষু হাসপাতাল</span></h3>
+          <p><span class="en">Life Fellow</span><span class="bn" lang="bn">আজীবন ফেলো</span></p>
         </div>
         <div class="aff reveal">
-          <h3>BUET Alumni Association</h3>
-          <p>Member</p>
+          <h3><span class="en">BUET Alumni Association</span><span class="bn" lang="bn">বুয়েট অ্যালামনাই অ্যাসোসিয়েশন</span></h3>
+          <p><span class="en">Member</span><span class="bn" lang="bn">সদস্য</span></p>
         </div>
         <div class="aff reveal">
-          <h3>Chittagong Collegiate School Alumni Association</h3>
-          <p>Member</p>
+          <h3><span class="en">Chittagong Collegiate School Alumni Association</span><span class="bn" lang="bn">চট্টগ্রাম কলেজিয়েট স্কুল অ্যালামনাই অ্যাসোসিয়েশন</span></h3>
+          <p><span class="en">Member</span><span class="bn" lang="bn">সদস্য</span></p>
         </div>
         <div class="aff reveal">
-          <h3>Chittagong College Alumni Association</h3>
-          <p>Member</p>
+          <h3><span class="en">Chittagong College Alumni Association</span><span class="bn" lang="bn">চট্টগ্রাম কলেজ অ্যালামনাই অ্যাসোসিয়েশন</span></h3>
+          <p><span class="en">Member</span><span class="bn" lang="bn">সদস্য</span></p>
         </div>
       </div>
     </div>
@@ -320,46 +365,46 @@
   <section id="training">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Training</p>
-        <h2>Technical Credentials</h2>
+        <p class="eyebrow"><span class="en">Training</span><span class="bn" lang="bn">প্রশিক্ষণ</span></p>
+        <h2><span class="en">Technical Credentials</span><span class="bn" lang="bn">কারিগরি প্রশিক্ষণ</span></h2>
         <div class="rule"></div>
       </div>
       <div class="cred-grid">
         <div class="cred reveal">
-          <h3>Power Plant Engineering Course</h3>
-          <p>Asian Institute of Technology (AIT), Thailand</p>
+          <h3><span class="en">Power Plant Engineering Course</span><span class="bn" lang="bn">পাওয়ার প্ল্যান্ট ইঞ্জিনিয়ারিং কোর্স</span></h3>
+          <p><span class="en">Asian Institute of Technology (AIT), Thailand</span><span class="bn" lang="bn">এশিয়ান ইনস্টিটিউট অব টেকনোলজি (এআইটি), থাইল্যান্ড</span></p>
         </div>
         <div class="cred reveal">
-          <h3>SCADA System Training (1989)</h3>
-          <p>GEC, UK</p>
+          <h3><span class="en">SCADA System Training (1989)</span><span class="bn" lang="bn">স্ক্যাডা সিস্টেম প্রশিক্ষণ (১৯৮৯)</span></h3>
+          <p><span class="en">GEC, UK</span><span class="bn" lang="bn">জিইসি, যুক্তরাজ্য</span></p>
         </div>
         <div class="cred reveal">
-          <h3>Operation and Maintenance of UPS</h3>
-          <p>ERSKINE, UK</p>
+          <h3><span class="en">Operation and Maintenance of UPS</span><span class="bn" lang="bn">ইউপিএস পরিচালনা ও রক্ষণাবেক্ষণ</span></h3>
+          <p><span class="en">ERSKINE, UK</span><span class="bn" lang="bn">এরস্কিন, যুক্তরাজ্য</span></p>
         </div>
         <div class="cred reveal">
-          <h3>Alternator Control and Switchgear Training</h3>
-          <p>DALE, UK</p>
+          <h3><span class="en">Alternator Control and Switchgear Training</span><span class="bn" lang="bn">অল্টারনেটর কন্ট্রোল ও সুইচগিয়ার প্রশিক্ষণ</span></h3>
+          <p><span class="en">DALE, UK</span><span class="bn" lang="bn">ডেল, যুক্তরাজ্য</span></p>
         </div>
         <div class="cred reveal">
-          <h3>GIS Training</h3>
-          <p>Siemens, Germany</p>
+          <h3><span class="en">GIS Training</span><span class="bn" lang="bn">জিআইএস প্রশিক্ষণ</span></h3>
+          <p><span class="en">Siemens, Germany</span><span class="bn" lang="bn">সিমেন্স, জার্মানি</span></p>
         </div>
         <div class="cred reveal">
-          <h3>Transformer Training (2003)</h3>
-          <p>Iran Transfo, Iran</p>
+          <h3><span class="en">Transformer Training (2003)</span><span class="bn" lang="bn">ট্রান্সফরমার প্রশিক্ষণ (২০০৩)</span></h3>
+          <p><span class="en">Iran Transfo, Iran</span><span class="bn" lang="bn">ইরান ট্রান্সফো, ইরান</span></p>
         </div>
         <div class="cred reveal">
-          <h3>Prepaid Metering System Training (2005)</h3>
-          <p>MIM, Malaysia</p>
+          <h3><span class="en">Prepaid Metering System Training (2005)</span><span class="bn" lang="bn">প্রিপেইড মিটারিং সিস্টেম প্রশিক্ষণ (২০০৫)</span></h3>
+          <p><span class="en">MIM, Malaysia</span><span class="bn" lang="bn">এমআইএম, মালয়েশিয়া</span></p>
         </div>
         <div class="cred reveal">
-          <h3>LT Switchgear Training</h3>
-          <p>L&amp;T, India</p>
+          <h3><span class="en">LT Switchgear Training</span><span class="bn" lang="bn">এলটি সুইচগিয়ার প্রশিক্ষণ</span></h3>
+          <p><span class="en">L&amp;T, India</span><span class="bn" lang="bn">এলঅ্যান্ডটি, ভারত</span></p>
         </div>
         <div class="cred reveal">
-          <h3>Renewable Energy Course</h3>
-          <p>Dhaka University</p>
+          <h3><span class="en">Renewable Energy Course</span><span class="bn" lang="bn">নবায়নযোগ্য জ্বালানি কোর্স</span></h3>
+          <p><span class="en">Dhaka University</span><span class="bn" lang="bn">ঢাকা বিশ্ববিদ্যালয়</span></p>
         </div>
       </div>
     </div>
@@ -368,9 +413,9 @@
 
 <footer>
   <div class="wrap">
-    <strong>Engr. Md. Noorul Karim</strong>
-    B.Sc. Engg., EMBA
-    <p class="contact">Mobile: <a href="tel:+8801756974858">+88 01756-974858</a> &nbsp;·&nbsp; Email: <a href="mailto:mnkarimnew@gmail.com">mnkarimnew@gmail.com</a></p>
+    <strong><span class="en">Engr. Md. Noorul Karim</span><span class="bn" lang="bn">প্রকৌশলী মো. নুরুল করিম</span></strong>
+    <span class="en">B.Sc. Engg., EMBA</span><span class="bn" lang="bn">বিএসসি ইঞ্জিনিয়ারিং, ইএমবিএ</span>
+    <p class="contact"><span class="en">Mobile</span><span class="bn" lang="bn">মোবাইল</span>: <a href="tel:+8801756974858">+88 01756-974858</a> &nbsp;·&nbsp; <span class="en">Email</span><span class="bn" lang="bn">ইমেইল</span>: <a href="mailto:mnkarimnew@gmail.com">mnkarimnew@gmail.com</a></p>
   </div>
 </footer>
 
@@ -413,7 +458,7 @@
     </article>
     <div class="vote-bar">
       <p class="appeal" lang="bn">প্রকৌশলী নুরুল করিমকে আইইবি নির্বাচনে ভোট দিয়ে জয়যুক্ত করুন।</p>
-      <button class="vote-ok" type="button" data-close>View profile</button>
+      <button class="vote-ok" type="button" data-close><span class="en">View profile</span><span class="bn" lang="bn">প্রোফাইল দেখুন</span></button>
     </div>
   </div>
 </div>
@@ -447,6 +492,14 @@
     box.addEventListener('click',function(e){ if(e.target===box||e.target.hasAttribute('data-close')) close(); });
     last=document.activeElement; box.hidden=false; document.addEventListener('keydown',onKey);
     var ok=box.querySelector('.vote-ok'); if(ok) ok.focus({preventScroll:true}); box.scrollTop=0;
+  })();
+</script>
+<script>
+  (function(){
+    var btns=document.querySelectorAll('.lang button');
+    function set(l){ document.documentElement.lang=l; btns.forEach(function(x){x.setAttribute('aria-pressed',x.getAttribute('data-lang')===l)}); try{localStorage.setItem('lang',l)}catch(e){} }
+    btns.forEach(function(x){x.addEventListener('click',function(){set(x.getAttribute('data-lang'))})});
+    set(document.documentElement.lang==='en'?'en':'bn');
   })();
 </script>
 </body>
